@@ -2,8 +2,11 @@ import { Link, useLocation } from "react-router"
 import { categories } from "../../utils/categories"
 import { MdDarkMode ,MdWbSunny} from "react-icons/md";
 import { useState } from "react";
+import { CiMenuBurger } from "react-icons/ci";
+
 
 export default function SideBar() {
+  const [active,setActive]=useState(false)
   const params=useLocation()
   const [theme,setTheme]=useState(localStorage.getItem('theme'))
   
@@ -17,18 +20,41 @@ export default function SideBar() {
 
   }
   return (
-    <div className="sticky top-0 z-10  backdrop-blur-3xl dark:bg-zinc-900/80">
-      <div className=" flex items-center justify-center gap-x-10 py-8 text-zinc-500 font-mono tracking-widest" >
-        {categories.map(item=>(
-          <Link 
-          to={item.link} 
-          key={item.id} 
-          className=
-            {`${params.pathname===item.link && 'text-zinc-800 px-2 dark:text-zinc-300'} transition-all duration-200 text-xl font-semibold hover:text-zinc-800 dark:hover:text-zinc-300`}>
-            {item.name}
-          </Link>
-        ))}
-        <button onClick={handleThame} className="hover:text-zinc-300 mb-1.5 cursor-pointerz">
+    <div className="sticky top-0 z-10  backdrop-blur-3xl bg-[#E8EAF6]/80 dark:bg-zinc-900/80">
+      <div className=" flex items-center justify-between md:justify-center md:gap-x-10  py-8 text-zinc-500 font-mono tracking-widest" >
+        
+        <div className="relative dark:text-zinc-100 px-5 md:p-0 flex md:hidden items-center flex-col gap-x-2">
+           <button onClick={()=>setActive(!active)} className="flex "> 
+            <CiMenuBurger />
+            Batuhan Kanra 
+           </button>
+          {active && (
+            <div className="absolute w-full flex flex-col items-center bg-zinc-900 top-5">
+             {categories.map(item=>(
+            <Link 
+            to={item.link} 
+            key={item.id} 
+            className=
+              {`${params.pathname===item.link && 'text-zinc-800 px-2 dark:text-zinc-300'} w-full transition-all duration-200 text-xl font-semibold hover:text-zinc-800 dark:hover:text-zinc-300`}>
+              {item.name}
+            </Link>
+          ))}
+            </div>
+          )}
+        </div>
+        
+        <div className="hidden md:flex items-center justify-center gap-x-10">
+          {categories.map(item=>(
+            <Link 
+            to={item.link} 
+            key={item.id} 
+            className=
+              {`${params.pathname===item.link && 'text-zinc-800 px-2 dark:text-zinc-300'} transition-all duration-200 text-xl font-semibold hover:text-zinc-800 dark:hover:text-zinc-300`}>
+              {item.name}
+            </Link>
+          ))}
+        </div>
+        <button onClick={handleThame} className="hover:text-zinc-300 mb-1.5  px-5 md:p-0 cursor-pointerz flex">
           {theme==='dark' ? (
             <MdDarkMode className=" transition-all duration-400 " />
           ): (

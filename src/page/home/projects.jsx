@@ -20,9 +20,9 @@ export default function Projects() {
             <p className="text-md text-zinc-500 text-center font-medium pt-0.5 pb-2">Taken from Vercel via Rest API  </p>
             <span className="flex items-center justify-center"><LuMousePointerClick size={35} /></span>
             {status==='Success' && data.map((item,i)=>(
-              <div key={i}>
+              <div key={i} className="md:w-full w-[250px]">
                   <h4 className="uppercase">{item.name}</h4>
-                  <a className="animate-pulse hover:animate-none dark:text-zinc-400 dark:hover:text-zinc-300 transition-all duration-200" href={`http://${item.targets.production.meta.branchAlias}`}>
+                  <a className=" dark:text-zinc-400 dark:hover:text-zinc-300 transition-all duration-200" href={`http://${item.targets.production.meta.branchAlias}`}>
                     {item.targets.production.meta.branchAlias}
                   </a>
               </div>

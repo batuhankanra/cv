@@ -11,9 +11,12 @@ export default function MainLayaout() {
 
   
   return (
-    <div className="w-full  mx-auto mt-3  container transition-all duration-500 font-serif">
+    <div className="w-full     transition-all duration-500 font-serif">
       <SideBar />
+      <div className="container mx-auto">
+
       <Outlet />
+      </div>
       <Footer /> 
     </div>
   )
