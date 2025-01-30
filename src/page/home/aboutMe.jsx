@@ -9,7 +9,7 @@ export default function AboutMe() {
         </div>
         <p>I am a passionate Web Developer focused on creating modern, responsive, and user-friendly applications.   </p>
         <p>I believe in the power of technology to provide solutions that make people is lives easier, and I approach every project with this belief and care.</p>
-        <p>Pushing the boundaries of technology ,  into solutions motivates me. I experiment with technologies like React-Vite and Node.js.</p>
+        <p>Pushing the boundaries of technology ,  into solutions motivates me. I experiment with technologies like React-Vite and Node.js</p>
     </div>
   )
 }

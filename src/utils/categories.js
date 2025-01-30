@@ -14,6 +14,11 @@ export const categories=[
         id:2,
         link:'/content',
         name:'Content'
+    },
+    {
+        id:3,
+        link:'/resume',
+        name:"Resume"
     }
 ]
    

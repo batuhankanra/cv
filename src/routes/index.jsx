@@ -3,6 +3,7 @@ import MainLayaout from "../MainLayout";
 import Home from "../page/home";
 import Content from "../page/content";
 import NotFound from "../page/NotFound";
+import Resume from "../page/Resume";
 
 
 const routes=createBrowserRouter([
@@ -17,6 +18,10 @@ const routes=createBrowserRouter([
             {
                 path:'/content',
                 element:<Content />
+            },
+            {
+                path:'/resume',
+                element:<Resume />
             },
             {
                 path:'/*',
