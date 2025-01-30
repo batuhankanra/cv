@@ -37,7 +37,7 @@ export default function Resume() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 group  hover:text-green">
             {skills.map(item=>(
               <div key={item.id} className="flex flex-col items-center  ">
-                <item.element size={40} className={`hover:text-[${item.color}] transition-all duration-200  `} />
+                <item.element size={40} style={{"--color":item.color}}  className={` text-[color:var(--color)] transition-all duration-200  `} />
                 <h2 className="text-2xl font-semibold ">{item.title}</h2>
               </div>
             ))}
