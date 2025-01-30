@@ -22,7 +22,6 @@ export default function SideBar() {
   return (
     <div className="sticky  top-0 z-10  backdrop-blur-3xl bg-[#E8EAF6]/80 dark:bg-zinc-900/80">
       <div className="  w-full flex items-center justify-between md:justify-center md:gap-x-10  py-8 text-zinc-500 font-mono tracking-widest" >
-        
         <div className=" dark:text-zinc-100 px-5 md:p-0 flex md:hidden items-center flex-col gap-x-2">
            <button onClick={()=>setActive(!active)} className="flex "> 
             <CiMenuBurger className="mt-1" />
