@@ -1,10 +1,17 @@
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { resumeMenu } from "../../utils/resumeMenu"
 import { skills } from "../../utils/skils"
+import autoAnimate from '@formkit/auto-animate'
 
 
 export default function Resume() {
   const [menu,setMenu]=useState('About Me')
+  const parent=useRef(null)
+
+  useEffect(()=>{
+    parent.current &&  autoAnimate(parent.current)
+  },[parent])
+
   return (
     <div className='flex flex-col md:flex-row items-center justify-center my-20 gap-x-10'>
       <aside className="flex flex-2 flex-col gap-y-5">
@@ -16,7 +23,7 @@ export default function Resume() {
           </button>
         ))}
       </aside>
-      <div className="flex-2 text-xl font-medium ease-in-out transition-all mt-10 duration-300">
+      <div ref={parent} className="flex-2 text-xl font-medium ease-in-out transition-all mt-10 duration-300">
       {menu==='About Me' && (
         <div className="  w-[200px] md:w-[350px] ">
           I am a passionate Web Developer focused on creating modern, responsive, and user-friendly applications.
